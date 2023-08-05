@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME	= MyAwesomePhonebook
-SRCS	= 
+SRCS	= main.cpp Contact.cpp PhoneBook.cpp
 
 CC		= clang++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98

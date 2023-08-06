@@ -27,10 +27,10 @@ private:
 	std::string _phone;
 	std::string _secret;
 public:
-	Contact();
-	~Contact();
+	Contact(void);
+	~Contact(void);
 
-	void		set_contact();
+	void		set_contact(void);
 	std::string	edit_contact(std::string str);
 };
 

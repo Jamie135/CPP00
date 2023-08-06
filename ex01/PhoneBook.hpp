@@ -18,18 +18,18 @@
 #include <cstdlib>
 #include "Contact.hpp"
 
-class Phonebook
+class PhoneBook
 {
 private:
 	Contact	_contact[8];
-	int		_i;
+	int		_index;
 	bool	_full;
 public:
-	Phonebook();
-	~Phonebook();
+	PhoneBook(void);
+	~PhoneBook(void);
 
-	void	instruction();
-	void	add_contact();
+	void	instruction(void);
+	void	add_contact(void);
 };
 
 #endif

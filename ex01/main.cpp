@@ -15,20 +15,20 @@
 
 int	main()
 {
-	Phonebook	Phonebook;
+	PhoneBook	PhoneBook;
 	std::string	command;
 
-	Phonebook.instruction();
+	PhoneBook.instruction();
 	while (std::getline(std::cin, command))
 	{
 		if (command == "ADD")
-			Phonebook.add_contact();
+			PhoneBook.add_contact();
 		else if (command == "EXIT")
 		{
 			std::cout << "Exit" << std::endl;;
 			break;
 		}
-		Phonebook.instruction();
+		PhoneBook.instruction();
 	}
 	return (0);
 }

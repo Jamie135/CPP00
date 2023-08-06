@@ -21,12 +21,17 @@
 class Contact
 {
 private:
-	/* data */
+	std::string _firstname;
+	std::string	_lastname;
+	std::string _nickname;
+	std::string _phone;
+	std::string _secret;
 public:
 	Contact();
 	~Contact();
 
-	bool	set_contact();
+	void		set_contact();
+	std::string	edit_contact(std::string str);
 };
 
 #endif

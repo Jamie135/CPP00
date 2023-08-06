@@ -36,12 +36,19 @@ void	PhoneBook::add_contact()
 	if (this->_full == false)
 	{
 		std::cout << "This is your contact #" << this->_index + 1 << std::endl;
-		if (this->_contacts[this->_index].set_contact() == true)
-		{
-			if (this->_index == 7)
-				this->_full = true;
-			else
-				this->_index++;
-		}
+		this->_contacts[this->_index].set_contact() == true
+		if (this->_index == 7)
+			this->_full = true;
+		else
+			this->_index++;
+	}
+	else
+	{
+		std::cout << "Your phonebook is full.\nReplacing with contact #1." << std::endl;
+		getline(std::cin, input);
+		for (int i = 1; i < 8; i++)
+			this->_contacts[i - 1] = this->_contacts[i];
+		std::cout << "This is your contact #8" << std::endl;
+		this->_contacts[this->_index].set_contact();
 	}
 }

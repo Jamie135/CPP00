@@ -23,6 +23,8 @@ int	main()
 	{
 		if (command == "ADD")
 			PhoneBook.add_contact();
+		else if (command == "SEARCH")
+			PhoneBook.search_contact();
 		else if (command == "EXIT")
 		{
 			std::cout << "Exit" << std::endl;;

@@ -30,6 +30,7 @@ public:
 
 	void	instruction(void);
 	void	add_contact(void);
+	void	search_contact(void)const;
 };
 
 #endif

@@ -20,6 +20,21 @@ Contact::~Contact(void)
 {
 }
 
+std::string	Contact::data_display(std::string str) const
+{
+	if (str.size() > 10)
+		return (str.substr(0,9) + '.');
+	else
+		return (str);
+}
+
+void	Contact::data_contact(void) const
+{
+	std::cout << std::setw(10) << data_display(this->_firstname) << '|';
+	std::cout << std::setw(10) << data_display(this->_lastname) << '|';
+	std::cout << std::setw(10) << data_display(this->_nickname) << '|' << std::endl;
+}
+
 std::string	edit_contact(std::string str)
 {
 	std::string	command;

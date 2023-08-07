@@ -31,6 +31,8 @@ public:
 	~Contact(void);
 
 	void		set_contact(void);
+	void		data_contact(void) const;
+	std::string	data_display(std::string str) const;
 };
 
 #endif

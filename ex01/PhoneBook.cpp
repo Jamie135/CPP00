@@ -66,16 +66,26 @@ void	PhoneBook::search_contact(void)const
 		std::cout << "Need at least one contact before searching." << std::endl;
 	else
 	{
-		for (int i = 0; i < this->_index; i++)
+		if (this->_index < 7)
 		{
-			std::cout << '|'  << std::setw(10) << i << '|';
-			this->_contact[i].data_contact();
+			for (int i = 0; i < this->_index; i++)
+			{
+				std::cout << '|'  << std::setw(10) << i << '|';
+				this->_contact[i].data_contact();
+			}
+		}
+		else
+		{
+			for (int i = 0; i <= this->_index; i++)
+			{
+				std::cout << '|'  << std::setw(10) << i << '|';
+				this->_contact[i].data_contact();
+			}
 		}
 		std::string input;
-		std::cout << "Enter index: ";
+		std::cout << "Enter index: " << std::endl;
 		while (std::getline(std::cin, input))
 		{
-
 			int	n = std::atoi(input.c_str());
 			if (input.length() > 1 || input.compare("0") < 0 || input.compare("7") > 0)
 			{

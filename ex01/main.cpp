@@ -26,10 +26,7 @@ int	main()
 		else if (command == "SEARCH")
 			PhoneBook.search_contact();
 		else if (command == "EXIT")
-		{
-			std::cout << "Exit" << std::endl;;
 			break;
-		}
 		PhoneBook.instruction();
 	}
 	return (0);

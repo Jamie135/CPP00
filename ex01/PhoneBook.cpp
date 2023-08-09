@@ -83,10 +83,15 @@ void	PhoneBook::search_contact(void)const
 			}
 		}
 		std::string input;
-		std::cout << "Enter index: " << std::endl;
-		while (std::getline(std::cin, input))
+		std::cout << "Enter index: ";
+		while (std::getline(std::cin, input) || !(std::getline(std::cin, input)))
 		{
 			int	n = std::atoi(input.c_str());
+			if (std::cin.eof() == true)
+			{
+				std::cout << "You Pressed ^D." << std::endl;
+				std::exit(0);
+			}
 			if (input.length() > 1 || input.compare("0") < 0 || input.compare("7") > 0)
 			{
 				std::cin.clear();

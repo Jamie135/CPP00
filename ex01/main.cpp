@@ -19,8 +19,13 @@ int	main()
 	std::string	command;
 
 	PhoneBook.instruction();
-	while (std::getline(std::cin, command))
+	while (std::getline(std::cin, command) || !(std::getline(std::cin, command)))
 	{
+		if (std::cin.eof() == true)
+		{
+			std::cout << "You Pressed ^D." << std::endl;
+			exit(0);
+		}
 		if (command == "ADD")
 			PhoneBook.add_contact();
 		else if (command == "SEARCH")

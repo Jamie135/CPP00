@@ -49,8 +49,13 @@ std::string	edit_contact(std::string str)
 	std::string	command;
 
 	std::cout << str;
-	while (getline(std::cin, command))
+	while (std::getline(std::cin, command) || !(std::getline(std::cin, command)))
 	{
+		if (std::cin.eof() == true)
+		{
+			std::cout << "You Pressed ^D" << std::endl;
+			std::exit(0);
+		}
 		if (command == "")
 			std::cout << str;
 		else

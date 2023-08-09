@@ -74,19 +74,26 @@ void	PhoneBook::search_contact(void)const
 		}
 		std::string input;
 		std::cout << "Enter index: ";
-		while (!(std::getline(std::cin, input)) || input.length() > 1 || input.compare("0") < 0 || input.compare("8") > 0 || (std::atoi(input.c_str()) -1 >= this->_index && this->_full == false))
+		while (std::getline(std::cin, input))
 		{
-			if (input.length() > 1 || input.compare("0") < 0 || input.compare("8") > 0)
+			int	n = std::atoi(input.c_str());
+			if (input.length() > 1 || n < 0 || n  > 7)
 			{
 				std::cin.clear();
 				std::cout << "Only one digit in range of 1 to 8 is allowed.\n";
 				std::cout << "Enter index: ";
 			}
-			else if (std::atoi(input.c_str()) - 1 >= this->_index && this->_full == false)
+			else if (n - 1 >= this->_index && this->_full == false)
 			{
 				std::cout << "You only have " << this->_index << " contact(s) saved." << std::endl;
 				std::cin.clear();
 				std::cout << "Enter index: ";
+			}
+			else
+			{
+				this->_contact[n].data_display();
+				std::cout << "|-------------------------------------------|" << std::endl;
+				break;
 			}
 		}
 	}

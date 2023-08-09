@@ -32,7 +32,8 @@ public:
 
 	void		set_contact(void);
 	void		data_contact(void) const;
-	std::string	data_display(std::string str) const;
+	void		data_display(void) const;
+	std::string	display(std::string str) const;
 };
 
 #endif

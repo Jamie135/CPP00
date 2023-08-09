@@ -20,7 +20,7 @@ Contact::~Contact(void)
 {
 }
 
-std::string	Contact::data_display(std::string str) const
+std::string	Contact::display(std::string str) const
 {
 	if (str.size() > 10)
 		return (str.substr(0,9) + '.');
@@ -28,11 +28,20 @@ std::string	Contact::data_display(std::string str) const
 		return (str);
 }
 
+void	Contact::data_display(void) const
+{
+	std::cout << "His first name is " << this->_firstname << std::endl;
+	std::cout << "His last name is " << this->_lastname << std::endl;
+	std::cout << "His nickname is " << this->_nickname << std::endl;
+	std::cout << "His phone number is " << this->_phone << std::endl;
+	std::cout << "His darkest secret is " << this->_secret << std::endl;
+}
+
 void	Contact::data_contact(void) const
 {
-	std::cout << std::setw(10) << data_display(this->_firstname) << '|';
-	std::cout << std::setw(10) << data_display(this->_lastname) << '|';
-	std::cout << std::setw(10) << data_display(this->_nickname) << '|' << std::endl;
+	std::cout << std::setw(10) << display(this->_firstname) << '|';
+	std::cout << std::setw(10) << display(this->_lastname) << '|';
+	std::cout << std::setw(10) << display(this->_nickname) << '|' << std::endl;
 }
 
 std::string	edit_contact(std::string str)

@@ -35,7 +35,7 @@ void	PhoneBook::add_contact(void)
 	
 	if (this->_full == false)
 	{
-		std::cout << "This is your contact #" << this->_index + 1 << std::endl;
+		std::cout << "This is your contact #" << this->_index << std::endl;
 		this->_contact[this->_index].set_contact();
 		if (this->_index == 7)
 			this->_full = true;
@@ -44,11 +44,10 @@ void	PhoneBook::add_contact(void)
 	}
 	else
 	{
-		std::cout << "Your phonebook is full.\nReplacing with contact #1." << std::endl;
-		getline(std::cin, input);
+		std::cout << "Your phonebook is full.\nReplacing with contact #0." << std::endl;
 		for (int i = 1; i < 8; i++)
 			this->_contact[i - 1] = this->_contact[i];
-		std::cout << "This is your contact #8" << std::endl;
+		std::cout << "This is your contact #7" << std::endl;
 		this->_contact[this->_index].set_contact();
 	}
 }
@@ -67,7 +66,7 @@ void	PhoneBook::search_contact(void)const
 		std::cout << "Need at least one contact before searching." << std::endl;
 	else
 	{
-		for (int i = 0; i < this->_index; i++)
+		for (int i = 0; i < this->_index + 1; i++)
 		{
 			std::cout << '|'  << std::setw(10) << i << '|';
 			this->_contact[i].data_contact();
@@ -77,10 +76,10 @@ void	PhoneBook::search_contact(void)const
 		while (std::getline(std::cin, input))
 		{
 			int	n = std::atoi(input.c_str());
-			if (input.length() > 1 || input.compare("0") < 0 || input.compare("8") > 0)
+			if (input.length() > 1 || input.compare("0") < 0 || input.compare("7") > 0)
 			{
 				std::cin.clear();
-				std::cout << "Only one digit in range of 1 to 8 is allowed.\n";
+				std::cout << "Only one digit in range of 0 to 7 is allowed.\n";
 				std::cout << "Enter index: ";
 			}
 			else if (n - 1 >= this->_index && this->_full == false)

@@ -89,7 +89,7 @@ void	PhoneBook::search_contact(void)const
 			int	n = std::atoi(input.c_str());
 			if (std::cin.eof() == true)
 			{
-				std::cout << "You Pressed ^D." << std::endl;
+				std::cout << "You Pressed ^D" << std::endl;
 				std::exit(0);
 			}
 			if (input.length() > 1 || input.compare("0") < 0 || input.compare("7") > 0)

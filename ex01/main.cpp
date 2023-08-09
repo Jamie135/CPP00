@@ -23,7 +23,7 @@ int	main()
 	{
 		if (std::cin.eof() == true)
 		{
-			std::cout << "You Pressed ^D." << std::endl;
+			std::cout << "You Pressed ^D" << std::endl;
 			exit(0);
 		}
 		if (command == "ADD")

@@ -62,27 +62,31 @@ static void display_column(void)
 
 void	PhoneBook::search_contact(void)const
 {
-	int	index;
-
 	display_column();
 	if (this->_index == 0)
 		std::cout << "Need at least one contact before searching." << std::endl;
 	else
 	{
-		std::string input;
 		for (int i = 0; i < this->_index; i++)
 		{
 			std::cout << '|'  << std::setw(10) << i << '|';
-			this->_contact[i].data_display();
+			this->_contact[i].data_contact();
 		}
+		std::string input;
 		std::cout << "Enter index: ";
 		while (!(std::getline(std::cin, input)) || input.length() > 1 || input.compare("0") < 0 || input.compare("8") > 0 || (std::atoi(input.c_str()) -1 >= this->_index && this->_full == false))
 		{
 			if (input.length() > 1 || input.compare("0") < 0 || input.compare("8") > 0)
 			{
 				std::cin.clear();
-				std::cout << "\033[31mOnly digits in range of 1 to 8 are allowed.\033[0m\n";
-				std::cout << "Please tell me which contact i should show you. (0 to quit searching)\nIndex: ";
+				std::cout << "Only one digit in range of 1 to 8 is allowed.\n";
+				std::cout << "Enter index: ";
+			}
+			else if (std::atoi(input.c_str()) - 1 >= this->_index && this->_full == false)
+			{
+				std::cout << "You only have " << this->_index << " contact(s) saved." << std::endl;
+				std::cin.clear();
+				std::cout << "Enter index: ";
 			}
 		}
 	}

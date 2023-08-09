@@ -77,7 +77,7 @@ void	PhoneBook::search_contact(void)const
 		while (std::getline(std::cin, input))
 		{
 			int	n = std::atoi(input.c_str());
-			if (input.length() > 1 || n < 0 || n  > 7)
+			if (input.length() > 1 || input.compare("0") < 0 || input.compare("8") > 0)
 			{
 				std::cin.clear();
 				std::cout << "Only one digit in range of 1 to 8 is allowed.\n";
